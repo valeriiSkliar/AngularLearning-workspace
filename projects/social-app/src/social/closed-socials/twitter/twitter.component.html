@@ -1,0 +1,9 @@
+<img
+  #imageElement
+  [src]="src"
+  alt="linkedIn"
+  [ngStyle]="{'width.px': imageSize , 'height.px': imageSize }"
+  [ngClass]="{'color': colorise}"
+  (click)="clickCount(imageElement)">
+<p>{{count}}</p>
+<p>'Current size:{{currentSize}}x{{currentSize}}</p>

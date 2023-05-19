@@ -1,0 +1,38 @@
+
+
+<div class="wrapper">
+  <div class="legend">
+    <p>opacityCount: {{opacityCount}}</p>
+    <p>changeColorCount: {{changeColorCount}}</p>
+    <p> fillColor: {{fillColor}}</p>
+    <p>isTransparent: {{isTransparent}}</p>
+  </div>
+  <div class="wrap">
+    <svg
+      width="200"
+      height="200"
+      stroke-width="1"
+      stroke="black"
+      [style.background]="svgBackgroundColor"
+      [attr.font-size]="fontSize + 'px'"
+      [attr.fill]="fillColor"
+      (contextmenu)="onSvgRightClick($event)">
+      <circle
+        [attr.cx]="circleX"
+        [attr.cy]="circleY"
+        [attr.r]="circleRadius"
+        stroke="black"
+        stroke-width="1"
+        [attr.fill]="fillColor"
+        [class.transparent]="isTransparent"
+        (dblclick)="onDoubleClick()"></circle>
+    </svg>
+    <input type="color" (input)="onColorChange($event)">
+
+  </div>
+</div>
+
+
+
+
+

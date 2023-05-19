@@ -1,0 +1,17 @@
+.color {
+	filter: grayscale(1);
+}
+.container {
+	padding: 5%;
+	width: 100%;
+	/*height: 50%;*/
+	border: #24292e solid;
+	display: flex;
+	flex-direction: column;
+}
+.wrap {
+	width: 100%;
+	gap: 10%;
+	display: flex;
+	flex-direction: row;
+}

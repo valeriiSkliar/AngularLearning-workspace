@@ -1,0 +1,10 @@
+:host {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	margin: 100%;
+}
+.backColor {
+	background: #1976d2;
+}
+body {
+	user-select: none;
+}

@@ -1,0 +1,31 @@
+<div class="input_wrap">
+  <div class="range_wrap">
+    <label for="width">Width</label>
+    <input
+      (mousemove)="widthChange($event)"
+      type="range"
+      name="width"
+      id="width"
+      max="1000"
+      min="0"
+      step="1"
+      [attr.value]="valueWidth"
+      >
+  </div>
+  <div class="range_wrap">
+    <label for="height">Height</label>
+    <input
+      (mousemove)="heightChange($event)"
+      type="range"
+      name="height"
+      id="height"
+      max="1000"
+      min="0"
+      step="1"
+      [attr.value]="valueHeight"
+      >
+  </div>
+</div>
+
+
+

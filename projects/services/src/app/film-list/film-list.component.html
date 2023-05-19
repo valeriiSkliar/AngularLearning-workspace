@@ -1,0 +1,7 @@
+<button (click)="hidePosters = !hidePosters">hide name</button>
+<ul>
+  <li *ngFor="let film of filmCollectionService.getAllFilms()">
+    <p *ngIf="!hidePosters">{{film.name}}</p>
+    <img src="{{film.posterLink}}" alt="{{film.name}}">
+  </li>
+</ul>

@@ -1,0 +1,4 @@
+<form #removeForm="ngForm" (ngSubmit)="removeFilm(removeForm)">
+  <input name="name" type="text" id="name" ngModel required>
+  <button type="submit" [disabled]="!removeForm.form.valid">remove Film</button>
+</form>

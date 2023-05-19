@@ -1,0 +1,6 @@
+<form #addForm="ngForm" (ngSubmit)="addFilm(addForm)">
+  <input name="name" type="text" id="name" ngModel required>
+  <input name="posterLink" type="text" id="posterLink" ngModel required>
+  <button type="submit" [disabled]="!addForm.form.valid">add Film</button>
+</form>
+
