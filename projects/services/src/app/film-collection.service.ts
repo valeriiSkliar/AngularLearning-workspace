@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Film } from './film';
+import { IFilm } from './film';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FilmCollectionService {
-	collection: Film[] = [
+	collection: IFilm[] = [
 		{
 			name: 'Mandalorian',
 			posterLink: 'https://static.posters.cz/image/1300/postere/star-wars-the-mandalorian-nightfall-i103406.jpg',
 		},
 	];
 
-	constructor() {}
-
-	getAllFilms(): Film[] {
+	getAllFilms(): IFilm[] {
 		return this.collection;
 	}
 
-	addFilmToCollection(item: Film) {
+	addFilmToCollection(item: IFilm) {
 		this.collection.push(item);
 	}
 

@@ -6,16 +6,27 @@ import { Component, HostListener } from '@angular/core';
 	styleUrls: ['./svg.component.css'],
 })
 export class SvgComponent {
-	fontSize: number = 16;
-	textColor: string = '#ff545f';
-	fillColor: string = '#ffffff';
-	circleX: number = 100;
-	circleY: number = 100;
-	circleRadius: number = 5;
-	opacityCount: number = 0;
-	changeColorCount: number = 0;
-	isTransparent: boolean = false;
-	svgBackgroundColor: string = '#dfd554';
+	fontSize = 16;
+
+	textColor = '#ff545f';
+
+	fillColor = '#ffffff';
+
+	circleX = 100;
+
+	circleY = 100;
+
+	circleRadius = 5;
+
+	opacityCount = 0;
+
+	changeColorCount = 0;
+
+	isTransparent = false;
+
+	svgBackgroundColor = '#dfd554';
+
+	private color = '#';
 
 	@HostListener('wheel', ['$event'])
 	onWheel(event: WheelEvent): void {
@@ -26,8 +37,8 @@ export class SvgComponent {
 		}
 	}
 
-	onColorChange(event: any): void {
-		this.fillColor = event.target.value;
+	onColorChange(event: Event): void {
+		this.fillColor = (event.target as HTMLInputElement).value;
 		this.changeColorCount += 1;
 	}
 
@@ -37,17 +48,17 @@ export class SvgComponent {
 	}
 
 	onSvgRightClick(event: MouseEvent): void {
-		event.preventDefault(); // предотвратить открытие контекстного меню
+		event.preventDefault();
 		this.fillColor = this.getRandomColor();
 		this.changeColorCount += 1;
 	}
 
 	getRandomColor(): string {
 		const letters = '0123456789ABCDEF';
-		let color = '#';
-		for (let i = 0; i < 6; i++) {
-			color += letters[Math.floor(Math.random() * 16)];
+		this.color = '#';
+		for (let i = 0; i < 6; i += 1) {
+			this.color += letters[Math.floor(Math.random() * 16)];
 		}
-		return color;
+		return this.color;
 	}
 }

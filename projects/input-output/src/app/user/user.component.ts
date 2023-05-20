@@ -6,27 +6,28 @@ import { Component, Input } from '@angular/core';
 	styleUrls: ['./user.component.css'],
 })
 export class UserComponent {
-	_avatarWidth = 100;
-	_avatarHeight = 100;
+	avatarWidthField = 100;
+
+	avatarHeightField = 100;
 
 	@Input() set avatarWidth(value: number) {
-		if (this.isWithinPageSize(value, this._avatarHeight)) {
-			this._avatarWidth = value < 0 ? 0 : value;
+		if (this.isWithinPageSize(value, this.avatarHeightField)) {
+			this.avatarWidthField = value < 0 ? 0 : value;
 		}
 	}
 
 	get avatarWidth(): number {
-		return this._avatarWidth;
+		return this.avatarWidthField;
 	}
 
 	@Input() set avatarHeight(value: number) {
-		if (this.isWithinPageSize(this._avatarWidth, value)) {
-			this._avatarHeight = value < 0 ? 0 : value;
+		if (this.isWithinPageSize(this.avatarWidthField, value)) {
+			this.avatarHeightField = value < 0 ? 0 : value;
 		}
 	}
 
 	get avatarHeight(): number {
-		return this._avatarHeight;
+		return this.avatarHeightField;
 	}
 
 	private isWithinPageSize(width: number, height: number): boolean {
@@ -34,13 +35,5 @@ export class UserComponent {
 		const pageWidth = window.innerWidth * 0.75;
 		const pageHeight = window.innerHeight * 0.75;
 		return maxDimension <= Math.min(pageWidth, pageHeight);
-	}
-
-	onWidthChange(value: number) {
-		this.avatarWidth = value;
-	}
-
-	onHeightChange(value: number) {
-		this.avatarHeight = value;
 	}
 }

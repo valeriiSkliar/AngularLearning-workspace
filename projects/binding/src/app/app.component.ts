@@ -6,12 +6,17 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-	title: string = 'title';
-	onOff: boolean = false;
-	private red: number = 0;
-	private green: number = 0;
-	private blue: number = 0;
-	textColor: string = `rgb(${this.red}, ${this.green}, ${this.blue})`;
+	title = 'title';
+
+	onOff = false;
+
+	private red = 0;
+
+	private green = 0;
+
+	private blue = 0;
+
+	textColor = `rgb(${this.red}, ${this.green}, ${this.blue})`;
 
 	changeColor() {
 		this.onOff = !this.onOff;

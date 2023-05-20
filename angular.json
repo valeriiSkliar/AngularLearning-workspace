@@ -76,6 +76,12 @@
 						"styles": ["projects/social-app/src/styles.css"],
 						"scripts": []
 					}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
+					"options": {
+						"lintFilePatterns": ["projects/**/src/**/*.ts", "projects/**/src/**/*.html"]
+					}
 				}
 			}
 		},

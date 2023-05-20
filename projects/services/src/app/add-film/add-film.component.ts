@@ -10,13 +10,16 @@ import { LoggerService } from '../logger.service';
 })
 export class AddFilmComponent {
 	constructor(private filmCollectionService: FilmCollectionService, private loggerService: LoggerService) {}
+
 	addFilm(addForm: NgForm) {
 		if (addForm.invalid) {
 			return;
 		}
-		const name = addForm.form.value.name;
-		const posterLink = addForm.form.value.posterLink;
-		this.filmCollectionService.addFilmToCollection({ name: name, posterLink: posterLink });
+		const { name, posterLink } = addForm.form.value;
+		this.filmCollectionService.addFilmToCollection({
+			name,
+			posterLink,
+		});
 		this.loggerService.logAction('movie added', name);
 	}
 }

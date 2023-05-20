@@ -7,7 +7,7 @@ import { FilmCollectionService } from '../film-collection.service';
 	styleUrls: ['./film-list.component.css'],
 })
 export class FilmListComponent {
-	hidePosters: boolean = false;
+	hidePosters = false;
 
 	constructor(public filmCollectionService: FilmCollectionService) {}
 }

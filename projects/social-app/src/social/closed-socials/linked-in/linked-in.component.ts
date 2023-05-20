@@ -7,10 +7,15 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class LinkedInComponent {
 	@Output() clickEvent = new EventEmitter();
-	src: string = 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png';
-	count: number = 0;
-	imageSize: number = 50;
-	colorise: boolean = true;
+
+	src = 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png';
+
+	count = 0;
+
+	imageSize = 50;
+
+	colorise = true;
+
 	currentSize: number = this.imageSize;
 
 	clickCount(imageElement: HTMLImageElement) {

@@ -7,8 +7,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class AvatarSettingsComponent {
 	@Input() valueWidth = 100;
+
 	@Input() valueHeight = 100;
+
 	@Output() valueWidthChange = new EventEmitter();
+
 	@Output() valueHeightChange = new EventEmitter();
 
 	heightChange({ target }: Event) {

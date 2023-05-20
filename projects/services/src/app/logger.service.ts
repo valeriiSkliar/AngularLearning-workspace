@@ -4,9 +4,13 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root',
 })
 export class LoggerService {
-	constructor() {}
+	action?: string;
+
+	name?: string;
 
 	logAction(action: string, name: string) {
-		console.log(`${action} : ${name}`);
+		this.action = action;
+		this.name = name;
+		console.log(`${this.action} : ${this.name}`);
 	}
 }

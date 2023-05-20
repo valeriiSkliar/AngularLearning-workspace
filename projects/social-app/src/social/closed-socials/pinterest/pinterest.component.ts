@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
 	styleUrls: ['./pinterest.component.css'],
 })
 export class PinterestComponent {
-	src: string = 'https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png';
-	count: number = 0;
-	imageSize: number = 50;
-	colorise: boolean = true;
+	src = 'https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png';
+
+	count = 0;
+
+	imageSize = 50;
+
+	colorise = true;
+
 	currentSize: number = this.imageSize;
 
 	clickCount(imageElement: HTMLImageElement) {

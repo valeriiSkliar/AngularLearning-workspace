@@ -10,11 +10,12 @@ import { LoggerService } from '../logger.service';
 })
 export class RemoveFilmComponent {
 	constructor(private filmCollectionService: FilmCollectionService, private loggerService: LoggerService) {}
+
 	removeFilm(removeForm: NgForm) {
 		if (removeForm.invalid) {
 			return;
 		}
-		const name = removeForm.form.value.name;
+		const { name } = removeForm.form.value;
 		this.filmCollectionService.removeFilmFromCollection(name);
 		this.loggerService.logAction('movie removed', name);
 	}
