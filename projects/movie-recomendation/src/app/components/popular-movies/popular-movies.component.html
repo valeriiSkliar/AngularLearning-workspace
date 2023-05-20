@@ -1,0 +1,19 @@
+<p>{{listId}}</p>
+<div class="movie_container">
+  <div
+    *ngFor="let movie of popularMovies"
+    class="movie_item"
+  >
+    <h3 class="titleText">{{ movie.titleText.text }}</h3>
+    <p class="releaseDate">{{ movie.releaseDate.year }}</p>
+    <a
+      [routerLink]="['/movie', movie.id]">
+      <img [src]="movie.primaryImage.url" [alt]="movie.primaryImage.plainText"></a>
+    <!--  <p>{{ movie.id }}</p>-->
+    <hr>
+  </div>
+</div>
+<div class="pagination">
+  <p>Current page: {{ currentPage }}</p>
+  <button class="nextPageButton" (click)="nextPage()">Next Page</button>
+</div>

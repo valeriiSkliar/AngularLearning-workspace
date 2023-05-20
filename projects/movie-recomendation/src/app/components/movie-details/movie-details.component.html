@@ -1,0 +1,12 @@
+<div *ngIf="movie">
+  <div [attr.id]="movie.id">
+    <p>Category: <b>{{movie.titleType.text}}</b></p>
+    <p>Release year: <b>{{movie.releaseYear.year}}</b></p>
+    <img src="{{movie.primaryImage.url}}"
+         [attr.alt]="movie.primaryImage.caption.plainText"
+         width="{{initWidth * (clicks || 1)}}"
+         class="min" [class.max]='state'
+    >
+    <h2>{{movie.titleText.text}}</h2>
+  </div>
+</div>

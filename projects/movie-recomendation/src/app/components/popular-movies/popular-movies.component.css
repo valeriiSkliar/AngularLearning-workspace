@@ -1,0 +1,32 @@
+img {
+	width: 200px;
+	height: 300px;
+}
+.pagination {
+	text-align: center;
+}
+.nextPageButton {
+	background-color: #24292e;
+	color: #eeeeee;
+	transition: 0.5s;
+}
+.nextPageButton:hover {
+	color: #24292e;
+	background-color: #eeeeee;
+	transition: 0.5s;
+}
+.movie_container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.movie_item {
+	width: 250px;
+}
+.titleText {
+	width: 90%;
+	height: 40px;
+	font-size: medium;
+	word-break: break-word;
+}

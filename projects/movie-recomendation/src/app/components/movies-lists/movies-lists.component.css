@@ -1,0 +1,25 @@
+.list_container {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 20px;
+	align-content: center;
+	padding: 0;
+	margin-bottom: 20px;
+}
+
+.list_item {
+	display: flex;
+	padding-left: 40px;
+	align-items: center;
+	border: #e6ebf1 solid 1px;
+	border-radius: 10px;
+	background: #333333;
+	height: 40px;
+	transition: 0.5s;
+}
+.list_item:hover {
+	background-color: #888888;
+	transition: 0.5s;
+}

@@ -80,7 +80,8 @@
 				"lint": {
 					"builder": "@angular-eslint/builder:lint",
 					"options": {
-						"lintFilePatterns": ["projects/**/src/**/*.ts", "projects/**/src/**/*.html"]
+						"lintFilePatterns": ["projects/**/src/**/*.ts", "projects/**/src/**/*.html"],
+						"exclude": ["projects/movie-recomendation"]
 					}
 				}
 			}
@@ -308,6 +309,82 @@
 						"tsConfig": "projects/services/tsconfig.spec.json",
 						"assets": ["projects/services/src/favicon.ico", "projects/services/src/assets"],
 						"styles": ["projects/services/src/styles.css"],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"movie-recomendation": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/movie-recomendation",
+			"sourceRoot": "projects/movie-recomendation/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/movie-recomendation",
+						"index": "projects/movie-recomendation/src/index.html",
+						"main": "projects/movie-recomendation/src/main.ts",
+						"polyfills": ["zone.js"],
+						"tsConfig": "projects/movie-recomendation/tsconfig.app.json",
+						"assets": ["projects/movie-recomendation/src/favicon.ico", "projects/movie-recomendation/src/assets"],
+						"styles": ["projects/movie-recomendation/src/styles.css"],
+						"scripts": []
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "movie-recomendation:build:production"
+						},
+						"development": {
+							"browserTarget": "movie-recomendation:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "movie-recomendation:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": ["zone.js", "zone.js/testing"],
+						"tsConfig": "projects/movie-recomendation/tsconfig.spec.json",
+						"assets": ["projects/movie-recomendation/src/favicon.ico", "projects/movie-recomendation/src/assets"],
+						"styles": ["projects/movie-recomendation/src/styles.css"],
 						"scripts": []
 					}
 				}
