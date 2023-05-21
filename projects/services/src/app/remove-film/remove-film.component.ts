@@ -17,6 +17,5 @@ export class RemoveFilmComponent {
 		}
 		const { name } = removeForm.form.value;
 		this.filmCollectionService.removeFilmFromCollection(name);
-		this.loggerService.logAction('movie removed', name);
 	}
 }

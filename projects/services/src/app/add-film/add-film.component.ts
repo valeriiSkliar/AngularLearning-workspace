@@ -20,6 +20,5 @@ export class AddFilmComponent {
 			name,
 			posterLink,
 		});
-		this.loggerService.logAction('movie added', name);
 	}
 }

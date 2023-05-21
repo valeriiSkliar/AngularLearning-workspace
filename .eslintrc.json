@@ -1,6 +1,6 @@
 {
 	"root": true,
-	"ignorePatterns": ["projects/movie-recomendation/**/*"],
+	"ignorePatterns": ["projects/movie-recomendation/**/*", "projects/test-proj"],
 	"overrides": [
 		{
 			"files": ["*.ts"],
