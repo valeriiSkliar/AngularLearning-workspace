@@ -465,6 +465,86 @@
 					}
 				}
 			}
+		},
+		"routingTask": {
+			"projectType": "application",
+			"schematics": {},
+			"root": "projects/routing-task",
+			"sourceRoot": "projects/routing-task/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/routing-task",
+						"index": "projects/routing-task/src/index.html",
+						"main": "projects/routing-task/src/main.ts",
+						"polyfills": ["zone.js"],
+						"tsConfig": "projects/routing-task/tsconfig.app.json",
+						"assets": ["projects/routing-task/src/favicon.ico", "projects/routing-task/src/assets"],
+						"styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css", "projects/routing-task/src/styles.css"],
+						"scripts": [
+							"node_modules/jquery/dist/jquery.min.js",
+							"node_modules/@popperjs/core/dist/umd/popper.min.js",
+							"node_modules/bootstrap/dist/js/bootstrap.min.js"
+						]
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "routingTask:build:production"
+						},
+						"development": {
+							"browserTarget": "routingTask:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "routingTask:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": ["zone.js", "zone.js/testing"],
+						"tsConfig": "projects/routing-task/tsconfig.spec.json",
+						"assets": ["projects/routing-task/src/favicon.ico", "projects/routing-task/src/assets"],
+						"styles": ["projects/routing-task/src/styles.css"],
+						"scripts": []
+					}
+				}
+			}
 		}
 	},
 	"cli": {

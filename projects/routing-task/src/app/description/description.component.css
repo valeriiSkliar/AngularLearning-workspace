@@ -1,0 +1,12 @@
+/* product-details.component.css */
+img {
+	max-width: 300px;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+button {
+	margin-top: 20px;
+}

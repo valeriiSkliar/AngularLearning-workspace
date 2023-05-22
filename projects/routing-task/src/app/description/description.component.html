@@ -1,0 +1,8 @@
+<!-- product-details.component.html -->
+<div *ngIf="product">
+  <img [src]="product.imageUrl" alt="{{ product.name }}">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.price }}</p>
+  <p>{{ product.description }}</p>
+  <button routerLink="">Вернуться к списку товаров</button>
+</div>

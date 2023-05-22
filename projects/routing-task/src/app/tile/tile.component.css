@@ -1,0 +1,27 @@
+/* products.component.css */
+.products-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.product-card {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+	width: 200px;
+}
+
+.product-image {
+	width: 100%;
+}
+
+.product-name {
+	margin: 10px 0;
+	font-weight: bold;
+}
+
+.product-price {
+	color: #008000;
+}
