@@ -186,13 +186,13 @@
 							"budgets": [
 								{
 									"type": "initial",
-									"maximumWarning": "500kb",
-									"maximumError": "1mb"
+									"maximumWarning": "2mb",
+									"maximumError": "2mb"
 								},
 								{
 									"type": "anyComponentStyle",
-									"maximumWarning": "2kb",
-									"maximumError": "4kb"
+									"maximumWarning": "2mb",
+									"maximumError": "2mb"
 								}
 							],
 							"outputHashing": "all"
@@ -573,8 +573,8 @@
 							"budgets": [
 								{
 									"type": "initial",
-									"maximumWarning": "500kb",
-									"maximumError": "1mb"
+									"maximumWarning": "2mb",
+									"maximumError": "2mb"
 								},
 								{
 									"type": "anyComponentStyle",
@@ -624,6 +624,13 @@
 							"projects/angular-and-firebase/src/styles.css"
 						],
 						"scripts": []
+					}
+				},
+				"deploy": {
+					"builder": "@angular/fire:deploy",
+					"options": {
+						"version": 2,
+						"browserTarget": "AngularAndFirebase:build:production"
 					}
 				}
 			}

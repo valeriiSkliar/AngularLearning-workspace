@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kanbanfire-70266": {
+      "hosting": {
+        "AngularAndFirebase": [
+          "kanbanfireapp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kanbanfire-70266"
+  }
+}
